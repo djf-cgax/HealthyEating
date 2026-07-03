@@ -159,12 +159,6 @@
 
   /* ===== Shell Layout ===== */
   body {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 64px 1fr;
-    grid-template-areas:
-      "sidebar topnav"
-      "sidebar main";
     min-height: 100vh;
     background: var(--color-neutral-50);
     margin: 0;
@@ -173,7 +167,6 @@
 
   /* ===== Top Navigation Bar ===== */
   .top-nav {
-    grid-area: topnav;
     position: fixed;
     top: 0;
     left: 240px;
@@ -277,7 +270,6 @@
 
   /* ===== Left Sidebar ===== */
   .sidebar {
-    grid-area: sidebar;
     position: fixed;
     top: 0;
     left: 0;
@@ -384,29 +376,14 @@
 
   /* ===== Main Content Area ===== */
   .main-content {
-    grid-area: main;
+    margin-left: 240px;
     margin-top: 64px;
     min-height: calc(100vh - 64px);
-    padding: 0;
-  }
-
-  /* Align main content with fixed sidebar (240px) */
-  @media (min-width: 1024px) {
-    .main-content {
-      padding-left: 264px;
-    }
+    padding: 24px;
   }
 
   /* ===== Responsive ===== */
   @media (max-width: 1023px) {
-    body {
-      grid-template-columns: 1fr;
-      grid-template-rows: 64px 1fr;
-      grid-template-areas:
-        "topnav"
-        "main";
-    }
-
     .sidebar {
       display: none;
     }
