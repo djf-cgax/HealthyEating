@@ -385,10 +385,16 @@
   /* ===== Main Content Area ===== */
   .main-content {
     grid-area: main;
-    margin-left: 240px;
     margin-top: 64px;
     min-height: calc(100vh - 64px);
     padding: 24px;
+  }
+
+  /* Align main content with fixed sidebar (240px) */
+  @media (min-width: 1024px) {
+    .main-content {
+      padding-left: 264px;
+    }
   }
 
   /* ===== Responsive ===== */
@@ -973,6 +979,30 @@
           .dt-plan-row__bar-fill--carb { width: 48% !important; }
           .dt-plan-row__bar-fill--fat { width: 48% !important; }
           .dt-score-card__ring-fill { stroke-dashoffset: 69.08 !important; }
+        }
+      }
+    </style>
+
+    <!-- ===== Layout Fix: Scrollable left column + Sticky right sidebar ===== -->
+    <style>
+      @media (min-width: 1024px) {
+        [data-dom-id="meal-log-column"] {
+          max-height: calc(100vh - 112px);
+          overflow-y: auto;
+          padding-right: 4px;
+          scrollbar-width: thin;
+        }
+        [data-dom-id="meal-log-column"]::-webkit-scrollbar {
+          width: 4px;
+        }
+        [data-dom-id="meal-log-column"]::-webkit-scrollbar-thumb {
+          background: var(--color-neutral-300);
+          border-radius: 4px;
+        }
+        [data-dom-id="tracking-sidebar"] {
+          position: sticky;
+          top: 24px;
+          align-self: start;
         }
       }
     </style>
