@@ -1,0 +1,1074 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饮食计划 - 健身饮食管理</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style id="theme-vars">
+/* ===== Brand Design Tokens — Fitness Diet Tracker ===== */
+
+:root {
+  /* ---- Primary Palette ---- */
+  --color-primary: #10B981;
+  --color-primary-light: #34D399;
+  --color-primary-lighter: #A7F3D0;
+  --color-primary-lightest: #D1FAE5;
+  --color-primary-dark: #059669;
+  --color-primary-darker: #047857;
+
+  /* ---- Accent (Energy Orange) ---- */
+  --color-accent: #F97316;
+  --color-accent-light: #FB923C;
+  --color-accent-lighter: #FDBA74;
+  --color-accent-lightest: #FED7AA;
+  --color-accent-dark: #EA580C;
+
+  /* ---- Neutral Scale ---- */
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-200: #E5E7EB;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-400: #9CA3AF;
+  --color-neutral-500: #6B7280;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1F2937;
+  --color-neutral-900: #111827;
+  --color-neutral-950: #030712;
+
+  /* ---- Surface ---- */
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F9FAFB;
+  --color-surface-tertiary: #F3F4F6;
+  --color-surface-elevated: #FFFFFF;
+
+  /* ---- State Colors ---- */
+  --state-success: #10B981;
+  --state-success-bg: #D1FAE5;
+  --state-warning: #F59E0B;
+  --state-warning-bg: #FEF3C7;
+  --state-error: #EF4444;
+  --state-error-bg: #FEE2E2;
+  --state-info: #3B82F6;
+  --state-info-bg: #DBEAFE;
+
+  /* ---- Text ---- */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #10B981;
+
+  /* ---- Typography ---- */
+  --font-display: 'Outfit', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Type Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.05);
+
+  /* Floating layer shadows (modal, popover, dropdown) */
+  --shadow-float: 0 25px 50px rgba(0, 0, 0, 0.08);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+  --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- Z-index ---- */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+}
+
+/* ===== Tailwind Integration ===== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-primary: var(--color-primary);
+    --color-accent: var(--color-accent);
+  }
+  @layer base {
+    body { background: var(--color-surface); color: var(--color-text-primary); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+
+  /* ===== Shell Layout ===== */
+  body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 64px 1fr;
+    grid-template-areas:
+      "sidebar topnav"
+      "sidebar main";
+    min-height: 100vh;
+    background: var(--color-neutral-50);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== Top Navigation Bar ===== */
+  .top-nav {
+    grid-area: topnav;
+    position: fixed;
+    top: 0;
+    left: 240px;
+    right: 0;
+    height: 64px;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-neutral-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: var(--z-sticky);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .top-nav__search {
+    flex: 1;
+    max-width: 480px;
+    position: relative;
+  }
+
+  .top-nav__search input {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px 0 40px;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    background: var(--color-neutral-50);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    outline: none;
+  }
+
+  .top-nav__search input::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  .top-nav__search input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  }
+
+  .top-nav__search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+  }
+
+  .top-nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .top-nav__notification {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    color: var(--color-neutral-500);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .top-nav__notification:hover {
+    background: var(--color-neutral-100);
+    color: var(--color-text-primary);
+  }
+
+  .top-nav__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: box-shadow var(--transition-fast);
+  }
+
+  .top-nav__avatar:hover {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  }
+
+  /* ===== Left Sidebar ===== */
+  .sidebar {
+    grid-area: sidebar;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    background: var(--color-neutral-800);
+    display: flex;
+    flex-direction: column;
+    z-index: calc(var(--z-sticky) + 1);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .sidebar__logo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+  }
+
+  .sidebar__logo-icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .sidebar__logo-text {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-light);
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+  }
+
+  .sidebar__nav {
+    flex: 1;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .sidebar__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 44px;
+    padding: 0 12px;
+    border-radius: var(--radius-md);
+    color: var(--color-neutral-400);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .sidebar__nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: transparent;
+    transition: background var(--transition-fast);
+  }
+
+  .sidebar__nav-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-neutral-200);
+  }
+
+  .sidebar__nav-item[data-active="true"] {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-neutral-50);
+  }
+
+  .sidebar__nav-item[data-active="true"]::before {
+    background: var(--color-primary);
+  }
+
+  .sidebar__nav-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .sidebar__nav-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ===== Main Content Area ===== */
+  .main-content {
+    grid-area: main;
+    margin-left: 240px;
+    margin-top: 64px;
+    min-height: calc(100vh - 64px);
+    padding: 24px;
+    padding-bottom: 88px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1023px) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: 64px 1fr;
+      grid-template-areas:
+        "topnav"
+        "main";
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .top-nav {
+      left: 0;
+    }
+
+    .main-content {
+      margin-left: 0;
+    }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+    <style type="text/tailwindcss">
+  /* ===== Diet Plan Page Styles ===== */
+  @layer components {
+
+    /* -- Plan Toggle Switch -- */
+    .plan-toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      background: var(--color-neutral-200);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 0;
+      cursor: pointer;
+    }
+    .plan-toggle__option {
+      position: relative;
+      z-index: 2;
+      padding: 8px 20px;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      transition: color 240ms cubic-bezier(.3,0,0,1);
+      user-select: none;
+    }
+    .plan-toggle__option.active-fat-loss {
+      color: var(--color-primary-darker);
+    }
+    .plan-toggle__option.active-muscle-gain {
+      color: var(--color-text-inverse);
+    }
+    .plan-toggle__option.inactive {
+      color: var(--color-neutral-500);
+    }
+    .plan-toggle__slider {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: calc(100% - 8px);
+      width: calc(50% - 4px);
+      border-radius: var(--radius-full);
+      background: var(--color-primary);
+      transition: transform 320ms cubic-bezier(.32,.72,0,1), background-color 320ms cubic-bezier(.32,.72,0,1);
+      z-index: 1;
+    }
+    .plan-toggle__slider.muscle-gain {
+      transform: translateX(100%);
+      background: var(--color-accent);
+    }
+
+    /* -- Macro Split Bar -- */
+    .macro-bar {
+      display: flex;
+      height: 28px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-neutral-100);
+    }
+    .macro-bar__segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: var(--font-semibold);
+      color: var(--color-text-inverse);
+      white-space: nowrap;
+      transition: width 800ms cubic-bezier(.32,.72,0,1);
+    }
+
+    /* -- Meal Card -- */
+    .meal-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-neutral-200);
+      padding: 12px;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      position: relative;
+    }
+    .meal-card:hover {
+      box-shadow: var(--shadow-sm);
+    }
+    .meal-card--balanced {
+      border-left: 3px solid var(--color-primary);
+    }
+    .meal-card--slightly-over {
+      border-left: 3px solid var(--color-accent);
+    }
+    .meal-card--over {
+      border-left: 3px solid var(--color-error, #EF4444);
+    }
+    .meal-card__edit-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      border: none;
+      background: var(--color-neutral-100);
+      color: var(--color-neutral-500);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+    }
+    .meal-card:hover .meal-card__edit-btn {
+      opacity: 1;
+    }
+    .meal-card__edit-btn:hover {
+      background: var(--color-primary-lightest);
+      color: var(--color-primary-dark);
+    }
+
+    /* -- Today Column Highlight -- */
+    .day-column--today {
+      background: rgba(16, 185, 129, 0.04);
+      border-radius: var(--radius-lg);
+    }
+
+    /* -- AI Tips Card -- */
+    .ai-tips-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-neutral-200);
+      border-left: 4px solid var(--color-primary);
+      padding: 20px 24px;
+    }
+
+    /* -- Bottom Action Bar -- */
+    .action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 240px;
+      right: 0;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-neutral-200);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      z-index: var(--z-sticky);
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+    }
+    @media (max-width: 1023px) {
+      .action-bar {
+        left: 0;
+      }
+    }
+
+    /* -- Stats Row -- */
+    .stat-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--color-surface-secondary);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      white-space: nowrap;
+    }
+    .stat-chip__value {
+      font-weight: var(--font-semibold);
+      color: var(--color-text-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* -- Weekly Grid Scroll -- */
+    .weekly-grid-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .weekly-grid-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .weekly-grid-scroll::-webkit-scrollbar-track {
+      background: var(--color-neutral-100);
+      border-radius: 3px;
+    }
+    .weekly-grid-scroll::-webkit-scrollbar-thumb {
+      background: var(--color-neutral-300);
+      border-radius: 3px;
+    }
+
+    /* -- Macro Bar Animation -- */
+    @keyframes macro-bar-fill {
+      from { width: 0; }
+    }
+    .macro-bar__segment--animate {
+      animation: macro-bar-fill 800ms cubic-bezier(.32,.72,0,1) forwards;
+    }
+
+    /* -- Reduced Motion -- */
+    @media (prefers-reduced-motion: reduce) {
+      .plan-toggle__slider {
+        transition-duration: 0.01ms;
+      }
+      .macro-bar__segment--animate {
+        animation-duration: 0.01ms;
+      }
+      .meal-card {
+        transition-duration: 0.01ms;
+      }
+      .meal-card__edit-btn {
+        transition-duration: 0.01ms;
+        opacity: 1;
+      }
+    }
+  }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+    <!-- ===== Left Sidebar ===== -->
+    <aside class="sidebar" data-dom-id="sidebar">
+        <!-- Logo -->
+        <div class="sidebar__logo" data-dom-id="sidebar-logo">
+            <i data-lucide="leaf" class="sidebar__logo-icon" style="width:24px;height:24px;"></i>
+            <span class="sidebar__logo-text">FitMeal</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar__nav" data-dom-id="sidebar-nav">
+            <a href="./dashboard.html" class="sidebar__nav-item" data-dom-id="nav-dashboard" data-nav-key="dashboard">
+                <i data-lucide="layout-dashboard" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">首页仪表盘</span>
+            </a>
+            <a href="./diet-plan.html" class="sidebar__nav-item" data-dom-id="nav-diet-plan" data-nav-key="diet-plan" data-active="true">
+                <i data-lucide="utensils-crossed" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">饮食计划</span>
+            </a>
+            <a href="./daily-tracking.html" class="sidebar__nav-item" data-dom-id="nav-daily-tracking" data-nav-key="daily-tracking">
+                <i data-lucide="calendar-check" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">每日记录</span>
+            </a>
+            <a href="./food-library.html" class="sidebar__nav-item" data-dom-id="nav-food-library" data-nav-key="food-library">
+                <i data-lucide="search" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">食物库</span>
+            </a>
+            <a href="./analytics.html" class="sidebar__nav-item" data-dom-id="nav-analytics" data-nav-key="analytics">
+                <i data-lucide="bar-chart-3" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">数据分析</span>
+            </a>
+            <a href="./ai-assistant.html" class="sidebar__nav-item" data-dom-id="nav-ai-assistant" data-nav-key="ai-assistant">
+                <i data-lucide="message-circle" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">AI 助手</span>
+            </a>
+            <a href="./profile.html" class="sidebar__nav-item" data-dom-id="nav-profile" data-nav-key="profile">
+                <i data-lucide="user" class="sidebar__nav-icon"></i>
+                <span class="sidebar__nav-label">个人中心</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Top Navigation Bar ===== -->
+    <header class="top-nav" data-dom-id="top-nav">
+        <!-- Search -->
+        <div class="top-nav__search" data-dom-id="top-nav-search">
+            <i data-lucide="search" class="top-nav__search-icon" style="width:18px;height:18px;"></i>
+            <input type="text" placeholder="搜索食物、菜谱..." data-dom-id="search-input">
+        </div>
+
+        <!-- Actions -->
+        <div class="top-nav__actions" data-dom-id="top-nav-actions">
+            <button class="top-nav__notification" data-dom-id="notification-btn" aria-label="通知">
+                <i data-lucide="bell" style="width:20px;height:20px;"></i>
+            </button>
+            <div class="top-nav__avatar" data-dom-id="user-avatar" title="张">
+                张
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main id="main-content" class="main-content" data-dom-id="main-content">
+
+      <!-- ===== Section 1: Plan Header ===== -->
+      <section class="mb-6">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h1 class="font-display text-2xl font-bold tracking-tight" style="text-wrap:balance;word-break:keep-all;overflow-wrap:break-word;">
+              我的饮食计划
+            </h1>
+            <p class="mt-1 text-sm" style="color:var(--color-text-secondary);">
+              自定义你的每周饮食方案，轻松达成目标
+            </p>
+          </div>
+
+          <!-- Plan Type Toggle -->
+          <div class="plan-toggle" id="planToggle" role="switch" aria-label="切换饮食模式">
+            <div class="plan-toggle__slider" id="planToggleSlider"></div>
+            <span class="plan-toggle__option active-fat-loss" id="optionFatLoss">减脂模式</span>
+            <span class="plan-toggle__option inactive" id="optionMuscleGain">增肌模式</span>
+          </div>
+        </div>
+
+        <!-- Plan Stats -->
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="stat-chip">
+            <i data-lucide="flame" style="width:14px;height:14px;color:var(--color-accent);"></i>
+            每日目标 <span class="stat-chip__value">2,000 kcal</span>
+          </span>
+          <span class="stat-chip">
+            <i data-lucide="beef" style="width:14px;height:14px;color:var(--color-accent);"></i>
+            蛋白质 <span class="stat-chip__value">150g</span>
+          </span>
+          <span class="stat-chip">
+            <i data-lucide="wheat" style="width:14px;height:14px;color:var(--color-info, #3B82F6);"></i>
+            碳水 <span class="stat-chip__value">250g</span>
+          </span>
+          <span class="stat-chip">
+            <i data-lucide="droplets" style="width:14px;height:14px;color:var(--color-accent-lighter);"></i>
+            脂肪 <span class="stat-chip__value">65g</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- ===== Section 2: Macro Split Visual ===== -->
+      <section class="mb-6 p-5 rounded-xl" style="background:var(--color-surface);border:1px solid var(--color-neutral-200);">
+        <h2 class="text-sm font-semibold mb-3" style="color:var(--color-text-secondary);">
+          宏量营养素比例
+        </h2>
+        <div class="macro-bar">
+          <div class="macro-bar__segment macro-bar__segment--animate" style="width:50%;background:var(--color-info, #3B82F6);">
+            碳水 50%
+          </div>
+          <div class="macro-bar__segment macro-bar__segment--animate" style="width:30%;background:var(--color-accent);animation-delay:100ms;">
+            蛋白质 30%
+          </div>
+          <div class="macro-bar__segment macro-bar__segment--animate" style="width:20%;background:var(--state-success);animation-delay:200ms;">
+            脂肪 20%
+          </div>
+        </div>
+        <div class="flex gap-6 mt-3">
+          <span class="flex items-center gap-1.5 text-xs" style="color:var(--color-text-tertiary);">
+            <span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:var(--color-info, #3B82F6);"></span>
+            碳水化合物
+          </span>
+          <span class="flex items-center gap-1.5 text-xs" style="color:var(--color-text-tertiary);">
+            <span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:var(--color-accent);"></span>
+            蛋白质
+          </span>
+          <span class="flex items-center gap-1.5 text-xs" style="color:var(--color-text-tertiary);">
+            <span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:var(--state-success);"></span>
+            脂肪
+          </span>
+        </div>
+      </section>
+
+      <!-- ===== Section 3: Weekly Meal Plan Grid ===== -->
+      <section class="mb-6">
+        <div class="flex items-center gap-2 mb-4">
+          <i data-lucide="calendar" style="width:18px;height:18px;color:var(--color-primary);"></i>
+          <h2 class="font-display text-lg font-semibold">本周饮食安排</h2>
+        </div>
+
+        <div class="weekly-grid-scroll pb-2">
+          <div class="grid gap-3" style="grid-template-columns:repeat(7,minmax(160px,1fr));min-width:1120px;">
+
+            <!-- 周一 Monday -->
+            <div class="flex flex-col gap-3 p-3">
+              <span class="text-sm font-semibold truncate" style="color:var(--color-text-secondary);">周一</span>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">燕麦粥+鸡蛋</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">320 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">鸡胸沙拉+糙米</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">650 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">清蒸鱼+西兰花</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">480 kcal</span>
+              </div>
+            </div>
+
+            <!-- 周二 Tuesday -->
+            <div class="flex flex-col gap-3 p-3">
+              <span class="text-sm font-semibold truncate" style="color:var(--color-text-secondary);">周二</span>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">全麦吐司+牛奶</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">350 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">牛肉面</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">580 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">豆腐蔬菜汤</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">420 kcal</span>
+              </div>
+            </div>
+
+            <!-- 周三 Wednesday -->
+            <div class="flex flex-col gap-3 p-3">
+              <span class="text-sm font-semibold truncate" style="color:var(--color-text-secondary);">周三</span>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">希腊酸奶+水果</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">280 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">烤鸡腿+土豆</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">620 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">虾仁炒蛋</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">510 kcal</span>
+              </div>
+            </div>
+
+            <!-- 周四 Thursday (TODAY) -->
+            <div class="flex flex-col gap-3 p-3 day-column--today">
+              <div class="flex items-center gap-1.5">
+                <span class="text-sm font-semibold truncate" style="color:var(--color-primary);">周四</span>
+                <span class="text-xs font-medium px-1.5 py-0.5 rounded" style="background:var(--color-primary-lightest);color:var(--color-primary-dark);">今天</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">紫薯粥+水煮蛋</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">300 kcal</span>
+              </div>
+              <div class="meal-card meal-card--slightly-over">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">番茄牛腩+米饭</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">720 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">凉拌鸡丝+杂粮饭</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">450 kcal</span>
+              </div>
+            </div>
+
+            <!-- 周五 Friday -->
+            <div class="flex flex-col gap-3 p-3">
+              <span class="text-sm font-semibold truncate" style="color:var(--color-text-secondary);">周五</span>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">豆浆+菜包</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">310 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">清炒虾仁+意面</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">640 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">南瓜浓汤+全麦面包</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">380 kcal</span>
+              </div>
+            </div>
+
+            <!-- 周六 Saturday -->
+            <div class="flex flex-col gap-3 p-3">
+              <span class="text-sm font-semibold truncate" style="color:var(--color-text-secondary);">周六</span>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">牛油果吐司+煎蛋</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">380 kcal</span>
+              </div>
+              <div class="meal-card meal-card--over">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">红烧排骨+米饭</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">820 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">蔬菜沙拉+鸡胸</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">400 kcal</span>
+              </div>
+            </div>
+
+            <!-- 周日 Sunday -->
+            <div class="flex flex-col gap-3 p-3">
+              <span class="text-sm font-semibold truncate" style="color:var(--color-text-secondary);">周日</span>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑早餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-primary);">早餐</span>
+                <p class="mt-1 text-sm font-medium truncate">水果燕麦碗</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">290 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑午餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-accent);">午餐</span>
+                <p class="mt-1 text-sm font-medium truncate">三文鱼刺身饭</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">680 kcal</span>
+              </div>
+              <div class="meal-card meal-card--balanced">
+                <button class="meal-card__edit-btn" aria-label="编辑晚餐">
+                  <i data-lucide="pencil" style="width:14px;height:14px;"></i>
+                </button>
+                <span class="text-xs font-medium" style="color:var(--color-info, #3B82F6);">晚餐</span>
+                <p class="mt-1 text-sm font-medium truncate">番茄蛋花汤+杂粮</p>
+                <span class="text-xs mt-0.5 block" style="color:var(--color-text-tertiary);font-variant-numeric:tabular-nums;">360 kcal</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Section 4: AI Nutrition Tips ===== -->
+      <section class="mb-6">
+        <div class="ai-tips-card">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style="background:var(--color-primary-lightest);">
+              <i data-lucide="sparkles" style="width:18px;height:18px;color:var(--color-primary);"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-sm font-semibold truncate" style="color:var(--color-text-primary);">AI 营养建议</h3>
+              <p class="mt-1 text-sm" style="color:var(--color-text-secondary);line-height:1.6;">
+                本周蛋白质摄入偏低，建议增加鸡蛋和鱼类的比例。周三和周五的午餐碳水偏高，可适当减少米饭分量，增加蔬菜占比。整体热量控制在合理范围内，继续保持。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== Section 5: Action Bar (Fixed Bottom) ===== -->
+    <div class="action-bar" data-dom-id="action-bar">
+      <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-150" style="background:var(--color-neutral-100);color:var(--color-text-secondary);border:1px solid var(--color-neutral-200);"
+        onmouseenter="this.style.background='var(--color-neutral-200)'"
+        onmouseleave="this.style.background='var(--color-neutral-100)'">
+        <i data-lucide="settings-2" style="width:16px;height:16px;"></i>
+        调整计划
+      </button>
+      <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-150" style="background:var(--color-primary);color:var(--color-text-inverse);"
+        onmouseenter="this.style.background='var(--color-primary-dark)'"
+        onmouseleave="this.style.background='var(--color-primary)'"
+        data-dom-id="cta-daily-tracking">
+        <i data-lucide="check-circle" style="width:16px;height:16px;"></i>
+        同步到今日
+      </button>
+    </div>
+
+    <script>
+      // Plan toggle interaction (class-based only, no DOM structure changes)
+      (function() {
+        var toggle = document.getElementById('planToggle');
+        var slider = document.getElementById('planToggleSlider');
+        var optFat = document.getElementById('optionFatLoss');
+        var optMuscle = document.getElementById('optionMuscleGain');
+        var isFatLoss = true;
+
+        if (toggle && slider && optFat && optMuscle) {
+          toggle.addEventListener('click', function() {
+            isFatLoss = !isFatLoss;
+            if (isFatLoss) {
+              slider.classList.remove('muscle-gain');
+              optFat.className = 'plan-toggle__option active-fat-loss';
+              optMuscle.className = 'plan-toggle__option inactive';
+            } else {
+              slider.classList.add('muscle-gain');
+              optFat.className = 'plan-toggle__option inactive';
+              optMuscle.className = 'plan-toggle__option active-muscle-gain';
+            }
+          });
+        }
+      })();
+    </script>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
