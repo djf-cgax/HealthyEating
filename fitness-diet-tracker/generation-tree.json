@@ -1,0 +1,90 @@
+{
+  "root": {
+    "nodeId": "gen-project-shell",
+    "kind": "project-shell",
+    "output": "partials/project-shell.html",
+    "sharedRegions": ["top-nav", "sidebar-nav", "root-frame"],
+    "privateRegions": [],
+    "mutableSlots": ["activeNavItem"],
+    "status": "planned",
+    "children": [
+      {
+        "nodeId": "gen-page-dashboard",
+        "kind": "page-leaf",
+        "output": "pages/dashboard.html",
+        "pageIds": ["page-dashboard"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-diet-plan",
+        "kind": "page-leaf",
+        "output": "pages/diet-plan.html",
+        "pageIds": ["page-diet-plan"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-daily-tracking",
+        "kind": "page-leaf",
+        "output": "pages/daily-tracking.html",
+        "pageIds": ["page-daily-tracking"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-food-library",
+        "kind": "page-leaf",
+        "output": "pages/food-library.html",
+        "pageIds": ["page-food-library"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-analytics",
+        "kind": "page-leaf",
+        "output": "pages/analytics.html",
+        "pageIds": ["page-analytics"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-ai-assistant",
+        "kind": "page-leaf",
+        "output": "pages/ai-assistant.html",
+        "pageIds": ["page-ai-assistant"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-profile",
+        "kind": "page-leaf",
+        "output": "pages/profile.html",
+        "pageIds": ["page-profile"],
+        "sharedRegions": [],
+        "privateRegions": ["main-content"],
+        "mutableSlots": [],
+        "status": "planned",
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "project": {
+    "name": "健身饮食管理",
+    "operation": "create",
+    "operatingMode": "free-explore",
+    "deviceType": "desktop",
+    "designRead": "Health & fitness SaaS dashboard / active fitness users / vibrant sporty energy / medium density / avoid neon glow",
+    "designDials": {
+      "layoutVariance": 3,
+      "motionIntensity": 3,
+      "visualDensity": 3
+    },
+    "styleDefinitionBrief": "Vibrant fitness SaaS, emerald green + energy orange, Outfit + Inter, animated progress rings, data-rich dashboard with card layout",
+    "designSource": {
+      "operatingMode": "free-explore",
+      "styleConstraints": {
+        "radiusMax": 16,
+        "staticShadowAlphaMax": 0.05
+      }
+    },
+    "generationTree": {
+      "root": {
+        "nodeId": "gen-project-shell",
+        "kind": "project-shell",
+        "output": "partials/project-shell.html",
+        "sharedRegions": ["top-nav", "sidebar-nav", "root-frame"],
+        "privateRegions": [],
+        "mutableSlots": ["activeNavItem"],
+        "status": "planned",
+        "children": [
+          {
+            "nodeId": "gen-page-dashboard",
+            "kind": "page-leaf",
+            "output": "pages/dashboard.html",
+            "pageIds": ["page-dashboard"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-diet-plan",
+            "kind": "page-leaf",
+            "output": "pages/diet-plan.html",
+            "pageIds": ["page-diet-plan"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-daily-tracking",
+            "kind": "page-leaf",
+            "output": "pages/daily-tracking.html",
+            "pageIds": ["page-daily-tracking"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-food-library",
+            "kind": "page-leaf",
+            "output": "pages/food-library.html",
+            "pageIds": ["page-food-library"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-analytics",
+            "kind": "page-leaf",
+            "output": "pages/analytics.html",
+            "pageIds": ["page-analytics"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-ai-assistant",
+            "kind": "page-leaf",
+            "output": "pages/ai-assistant.html",
+            "pageIds": ["page-ai-assistant"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-profile",
+            "kind": "page-leaf",
+            "output": "pages/profile.html",
+            "pageIds": ["page-profile"],
+            "sharedRegions": [],
+            "privateRegions": ["main-content"],
+            "mutableSlots": [],
+            "status": "planned",
+            "children": []
+          }
+        ]
+      }
+    }
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "brandCssPath": "colors_and_type.css",
+    "styleConstraints": {
+      "radiusMax": 16,
+      "staticShadowAlphaMax": 0.05
+    }
+  },
+  "pages": [
+    {
+      "nodeId": "page-dashboard",
+      "title": "首页仪表盘",
+      "htmlSrc": "pages/dashboard.html",
+      "pageIndex": 1,
+      "pageType": "information-dense",
+      "chartsRequired": true,
+      "visualNorthStar": "Hero ring progress indicators for calories, protein, carbs; quick-add meal CTA with energetic animation",
+      "compositionPattern": "dashboard-layout",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover",
+        "sharedProgressStyle": "Circular SVG progress rings with animated stroke-dasharray"
+      },
+      "requirements": "REQ-FEATURE-001: Daily calorie/macro overview with circular progress rings. REQ-FEATURE-002: Quick-add meal button. REQ-FEATURE-003: Water intake tracker. REQ-FEATURE-004: Recent meals list. REQ-FEATURE-005: Weekly summary mini chart.",
+      "imagePlan": [
+        { "role": "hero", "filename": "hero-dashboard.jpg", "section": "hero", "status": "planned" }
+      ]
+    },
+    {
+      "nodeId": "page-diet-plan",
+      "title": "饮食计划",
+      "htmlSrc": "pages/diet-plan.html",
+      "pageIndex": 2,
+      "pageType": "task-driven",
+      "chartsRequired": false,
+      "visualNorthStar": "Toggle between fat-loss and muscle-gain plans with animated switch; weekly meal calendar with color-coded macro bars",
+      "compositionPattern": "split-layout",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover"
+      },
+      "requirements": "REQ-FEATURE-010: Plan type selector (fat-loss / muscle-gain). REQ-FEATURE-011: Daily calorie target with macro split. REQ-FEATURE-012: Weekly meal plan grid with meals per slot. REQ-FEATURE-013: Edit plan button per meal slot. REQ-FEATURE-014: Macro breakdown per meal with progress bars.",
+      "imagePlan": []
+    },
+    {
+      "nodeId": "page-daily-tracking",
+      "title": "每日记录",
+      "htmlSrc": "pages/daily-tracking.html",
+      "pageIndex": 3,
+      "pageType": "information-dense",
+      "chartsRequired": true,
+      "visualNorthStar": "Timeline-based meal log with expandable nutrient breakdown cards; real-time running totals with animated counters",
+      "compositionPattern": "dual-column",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover"
+      },
+      "requirements": "REQ-FEATURE-020: Date picker to select tracking day. REQ-FEATURE-021: Meal slots (breakfast, lunch, dinner, snack) with food items. REQ-FEATURE-022: Each food item shows carb, protein, fat, calories. REQ-FEATURE-023: Add food button per meal slot. REQ-FEATURE-024: Running daily totals sidebar with plan comparison. REQ-FEATURE-025: Color-coded status when exceeding plan targets.",
+      "imagePlan": []
+    },
+    {
+      "nodeId": "page-food-library",
+      "title": "食物库",
+      "htmlSrc": "pages/food-library.html",
+      "pageIndex": 4,
+      "pageType": "task-driven",
+      "chartsRequired": false,
+      "visualNorthStar": "Search-forward food database with instant results grid; each food card shows key macros at a glance with tap-to-add interaction",
+      "compositionPattern": "search-grid",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover"
+      },
+      "requirements": "REQ-FEATURE-030: Search bar with auto-complete. REQ-FEATURE-031: Food category filters. REQ-FEATURE-032: Food cards showing name, calories, protein, carbs, fat per serving. REQ-FEATURE-033: Add to meal button. REQ-FEATURE-034: Custom food creation form.",
+      "imagePlan": []
+    },
+    {
+      "nodeId": "page-analytics",
+      "title": "数据分析",
+      "htmlSrc": "pages/analytics.html",
+      "pageIndex": 5,
+      "pageType": "information-dense",
+      "chartsRequired": true,
+      "visualNorthStar": "Multi-chart analytics dashboard with animated line/bar charts; trend indicators with up/down arrows and color-coded badges",
+      "compositionPattern": "dashboard-layout",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover"
+      },
+      "requirements": "REQ-FEATURE-040: Weekly calorie trend line chart. REQ-FEATURE-041: Macro distribution donut chart. REQ-FEATURE-042: Weight progression chart. REQ-FEATURE-043: Streak counter and consistency score. REQ-FEATURE-044: Period selector (week/month/3-month).",
+      "imagePlan": []
+    },
+    {
+      "nodeId": "page-ai-assistant",
+      "title": "AI 助手",
+      "htmlSrc": "pages/ai-assistant.html",
+      "pageIndex": 6,
+      "pageType": "task-driven",
+      "chartsRequired": false,
+      "visualNorthStar": "Full-screen chat interface with typing animation; AI avatar with pulse animation; contextual diet suggestions with inline food cards",
+      "compositionPattern": "chat-layout",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover"
+      },
+      "requirements": "REQ-FEATURE-050: Chat message thread with user/AI bubbles. REQ-FEATURE-051: AI typing indicator animation. REQ-FEATURE-052: Suggested quick questions chips. REQ-FEATURE-053: Inline food recommendation cards within chat. REQ-FEATURE-054: Context-aware: AI can see user's current plan and daily intake.",
+      "imagePlan": []
+    },
+    {
+      "nodeId": "page-profile",
+      "title": "个人中心",
+      "htmlSrc": "pages/profile.html",
+      "pageIndex": 7,
+      "pageType": "information-dense",
+      "chartsRequired": false,
+      "visualNorthStar": "Profile header with gradient banner and avatar; body metric cards with animated number transitions; goal toggle with smooth slide animation",
+      "compositionPattern": "profile-layout",
+      "continuityAnchors": {
+        "sharedHeader": "Top nav with logo, search, notifications, avatar",
+        "sharedSidebar": "Left sidebar with nav items and icons",
+        "sharedCardStyle": "White cards with subtle border, rounded-lg, hover lift",
+        "sharedCTAStyle": "Primary green CTA buttons with bounce hover"
+      },
+      "requirements": "REQ-FEATURE-060: User avatar and basic info. REQ-FEATURE-061: Body metrics (weight, height, age, gender). REQ-FEATURE-062: Goal selector (fat-loss / muscle-gain / maintain). REQ-FEATURE-063: Daily calorie target calculator. REQ-FEATURE-064: Account settings.",
+      "imagePlan": []
+    }
+  ],
+  "assets": [],
+  "wiringPlan": [
+    { "from": "page-dashboard", "to": "page-diet-plan", "domId": "nav-diet-plan", "label": "饮食计划" },
+    { "from": "page-dashboard", "to": "page-daily-tracking", "domId": "nav-daily-tracking", "label": "每日记录" },
+    { "from": "page-dashboard", "to": "page-analytics", "domId": "nav-analytics", "label": "数据分析" },
+    { "from": "page-dashboard", "to": "page-ai-assistant", "domId": "nav-ai-assistant", "label": "AI 助手" },
+    { "from": "page-dashboard", "to": "page-profile", "domId": "nav-profile", "label": "个人中心" },
+    { "from": "page-diet-plan", "to": "page-daily-tracking", "domId": "cta-daily-tracking", "label": "开始记录" },
+    { "from": "page-daily-tracking", "to": "page-food-library", "domId": "cta-add-food", "label": "添加食物" },
+    { "from": "page-daily-tracking", "to": "page-diet-plan", "domId": "nav-diet-plan", "label": "饮食计划" },
+    { "from": "page-food-library", "to": "page-daily-tracking", "domId": "back-daily-tracking", "label": "返回" },
+    { "from": "page-analytics", "to": "page-dashboard", "domId": "cta-back-dashboard", "label": "返回仪表盘" },
+    { "from": "page-ai-assistant", "to": "page-dashboard", "domId": "nav-dashboard", "label": "首页" },
+    { "from": "page-profile", "to": "page-dashboard", "domId": "cta-save-profile", "label": "保存并返回" }
+  ],
+  "hiddenInteractionPlan": [
+    { "from": "page-diet-plan", "to": "page-dashboard", "domId": "nav-dashboard", "label": "首页" },
+    { "from": "page-daily-tracking", "to": "page-dashboard", "domId": "nav-dashboard", "label": "首页" },
+    { "from": "page-daily-tracking", "to": "page-analytics", "domId": "nav-analytics", "label": "数据分析" },
+    { "from": "page-daily-tracking", "to": "page-ai-assistant", "domId": "nav-ai-assistant", "label": "AI 助手" },
+    { "from": "page-daily-tracking", "to": "page-profile", "domId": "nav-profile", "label": "个人中心" },
+    { "from": "page-food-library", "to": "page-dashboard", "domId": "nav-dashboard", "label": "首页" },
+    { "from": "page-food-library", "to": "page-diet-plan", "domId": "nav-diet-plan", "label": "饮食计划" },
+    { "from": "page-food-library", "to": "page-analytics", "domId": "nav-analytics", "label": "数据分析" },
+    { "from": "page-food-library", "to": "page-ai-assistant", "domId": "nav-ai-assistant", "label": "AI 助手" },
+    { "from": "page-food-library", "to": "page-profile", "domId": "nav-profile", "label": "个人中心" },
+    { "from": "page-analytics", "to": "page-diet-plan", "domId": "nav-diet-plan", "label": "饮食计划" },
+    { "from": "page-analytics", "to": "page-daily-tracking", "domId": "nav-daily-tracking", "label": "每日记录" },
+    { "from": "page-analytics", "to": "page-ai-assistant", "domId": "nav-ai-assistant", "label": "AI 助手" },
+    { "from": "page-analytics", "to": "page-profile", "domId": "nav-profile", "label": "个人中心" },
+    { "from": "page-ai-assistant", "to": "page-diet-plan", "domId": "nav-diet-plan", "label": "饮食计划" },
+    { "from": "page-ai-assistant", "to": "page-daily-tracking", "domId": "nav-daily-tracking", "label": "每日记录" },
+    { "from": "page-ai-assistant", "to": "page-analytics", "domId": "nav-analytics", "label": "数据分析" },
+    { "from": "page-ai-assistant", "to": "page-profile", "domId": "nav-profile", "label": "个人中心" },
+    { "from": "page-profile", "to": "page-diet-plan", "domId": "nav-diet-plan", "label": "饮食计划" },
+    { "from": "page-profile", "to": "page-daily-tracking", "domId": "nav-daily-tracking", "label": "每日记录" },
+    { "from": "page-profile", "to": "page-analytics", "domId": "nav-analytics", "label": "数据分析" },
+    { "from": "page-profile", "to": "page-ai-assistant", "domId": "nav-ai-assistant", "label": "AI 助手" }
+  ]
+}

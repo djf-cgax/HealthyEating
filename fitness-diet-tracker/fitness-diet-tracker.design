@@ -1,0 +1,350 @@
+{
+  "data": [
+    {
+      "id": "page-dashboard",
+      "title": "首页仪表盘",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 620,
+        "y": 1953,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/dashboard.html",
+        "interactions": [
+          {
+            "domId": "cta-daily-tracking",
+            "targetPageId": "page-daily-tracking"
+          },
+          {
+            "domId": "nav-diet-plan",
+            "targetPageId": "page-diet-plan"
+          },
+          {
+            "domId": "nav-daily-tracking",
+            "targetPageId": "page-daily-tracking"
+          },
+          {
+            "domId": "nav-analytics",
+            "targetPageId": "page-analytics"
+          },
+          {
+            "domId": "nav-ai-assistant",
+            "targetPageId": "page-ai-assistant"
+          },
+          {
+            "domId": "nav-profile",
+            "targetPageId": "page-profile"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-diet-plan",
+      "title": "饮食计划",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 1528,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/diet-plan.html",
+        "interactions": [
+          {
+            "domId": "cta-daily-tracking",
+            "targetPageId": "page-daily-tracking"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-daily-tracking",
+            "targetPageId": "page-daily-tracking",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-analytics",
+            "targetPageId": "page-analytics",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-ai-assistant",
+            "targetPageId": "page-ai-assistant",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-profile",
+            "targetPageId": "page-profile",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-daily-tracking",
+      "title": "每日记录",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/daily-tracking.html",
+        "interactions": [
+          {
+            "domId": "cta-add-food",
+            "targetPageId": "page-food-library"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet-plan",
+            "targetPageId": "page-diet-plan",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-analytics",
+            "targetPageId": "page-analytics",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-ai-assistant",
+            "targetPageId": "page-ai-assistant",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-profile",
+            "targetPageId": "page-profile",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-food-library",
+      "title": "食物库",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 552,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/food-library.html",
+        "interactions": [
+          {
+            "domId": "back-daily-tracking",
+            "targetPageId": "page-daily-tracking"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet-plan",
+            "targetPageId": "page-diet-plan",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-daily-tracking",
+            "targetPageId": "page-daily-tracking",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-analytics",
+            "targetPageId": "page-analytics",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-ai-assistant",
+            "targetPageId": "page-ai-assistant",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-profile",
+            "targetPageId": "page-profile",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-analytics",
+      "title": "数据分析",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 1953,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/analytics.html",
+        "interactions": [
+          {
+            "domId": "cta-back-dashboard",
+            "targetPageId": "page-dashboard"
+          },
+          {
+            "domId": "nav-diet-plan",
+            "targetPageId": "page-diet-plan",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-daily-tracking",
+            "targetPageId": "page-daily-tracking",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-ai-assistant",
+            "targetPageId": "page-ai-assistant",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-profile",
+            "targetPageId": "page-profile",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-ai-assistant",
+      "title": "AI 助手",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 2616,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/ai-assistant.html",
+        "interactions": [
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-diet-plan",
+            "targetPageId": "page-diet-plan",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-daily-tracking",
+            "targetPageId": "page-daily-tracking",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-analytics",
+            "targetPageId": "page-analytics",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-profile",
+            "targetPageId": "page-profile",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-profile",
+      "title": "个人中心",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 3011,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/profile.html",
+        "interactions": [
+          {
+            "domId": "cta-save-profile",
+            "targetPageId": "page-dashboard"
+          },
+          {
+            "domId": "nav-diet-plan",
+            "targetPageId": "page-diet-plan",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-daily-tracking",
+            "targetPageId": "page-daily-tracking",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-analytics",
+            "targetPageId": "page-analytics",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-ai-assistant",
+            "targetPageId": "page-ai-assistant",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-001",
+      "title": "首页主视觉",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 0,
+        "y": 3616
+      },
+      "devMetadata": {
+        "imageSrc": "assets/hero-dashboard.jpg"
+      }
+    },
+    {
+      "id": "image-002",
+      "title": "健康餐食品牌图",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783044077000,
+      "canvasData": {
+        "x": 620,
+        "y": 3616
+      },
+      "devMetadata": {
+        "imageSrc": "assets/brand-nutrition.jpg"
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "健身饮食管理",
+    "windowSize": {
+      "width": 800,
+      "height": 600
+    },
+    "showEdge": false
+  }
+}
